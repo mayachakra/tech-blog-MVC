@@ -1,0 +1,26 @@
+<div class="blog-details">
+    <h2>{{post.title}}</h2>
+    <p>Posted by <a href="/dashboard/{{post.user.id}}">{{post.user.name}}</a> on {{format_date post.created_at}}</p>
+    <p>{{post.content}}</p>
+
+    {{#if post.comments.length}}
+    <div class="comments">
+        <h3>Comments</h3>
+        {{#each post.comments}}
+        <div class="comment-details">
+            {{> comment-details}}
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+
+    {{#if logged_in}}
+    <form class="new-comment-form">
+        <label for="comment-text">Add a Comment: </label>
+        <textarea id="comment-text" name="comment-text" rows="3" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    {{else}}
+    <p>Please log in to leave a comment.</p>
+    {{/if}}
+</div>

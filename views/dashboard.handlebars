@@ -1,0 +1,33 @@
+<div class="dashboard-container">
+    <h2>Your Dashboard</h2>
+    <button id="newpost-btn">Add New Blog Post</button>
+    <div class="post-list">    
+    {{#each posts}}
+        <div class="post-card">
+            {{> blog-details post=this}}
+        </div>
+    {{/each}}
+    </div>
+</div>
+
+<div id="newpost-modal" class="modal">
+    <div class="modal-content">
+        <span class="close-button">&times;</span>
+        <h2>Create a New Post</h2>
+        <form id="newpost-form">
+        <label for="post-title">Title:</label>
+        <input type="text" id="post-title" name="post-title" required>
+        <label for="post-content">Content:</label>
+        <textarea id="text" id="post-content" name="post-content" rows="5" required></textarea>
+        <button type="submit">Post</button>
+        </form>
+    </div>
+</div>
+
+<script src="/public/js/dashboard.js"></script>
+
+
+
+<!--
+In the dashboard.handlebars template, you can loop through an array of posts and include the blog-details partial for each post.
+-->

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Site</title>
+</head>
+<body>
+    <header>
+        {{> header}}
+    </header>
+    <main>
+        <div class = "homepage-container">
+        {{#if blogPosts.length}}
+        <h2> Existing Blog Posts </h2>
+        {{#each blogPosts}}
+            <div class="blog-post">
+                <h3>Post blog<a href="/dashboard/{{user.id}}">{{user.username}}</a> on {{format_date created_at}}</h3>
+            </div>
+        {{/each}}
+        {{else}}
+        <p>No posts yet.</p>
+        {{/if}}
+        </div>
+    </main>
+    <footer>
+        {{> footer}}
+    </footer>
+    <script src="/js/homepage.js"></script>
+</body>
+</html>
