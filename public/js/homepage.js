@@ -1,6 +1,5 @@
 //const { response } = require("express");
 document.addEventListener('DOMContentLoaded', () => {
-
     const postLinks = document.querySelectorAll('.blog-post a');
     postLinks.forEach((link) => {
         link.addEventListener('click', (event) => {

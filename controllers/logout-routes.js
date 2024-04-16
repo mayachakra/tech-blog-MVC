@@ -1,8 +1,8 @@
 const router = require('express').Router();
 
-router.get('/signup', async (req,res) => {
+router.get('/logout', async (req,res) => {
     //const userLogin = await User.findAll();
-    res.render('signup');
+    res.render('logout');
 });
 
 module.exports = router;
