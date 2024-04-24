@@ -1,5 +1,14 @@
 const router = require('express').Router();
 const { BlogPost, User } = require('../models');
+//dashboard isnt working
+
+/*
+router.get('/dashboard', async (req,res) => {
+    //const userLogin = await User.findAll();
+    res.render('dashboard');
+});
+
+*/
 
 //all posts (read)
 router.get('/', async (req,res) => {
@@ -7,7 +16,8 @@ router.get('/', async (req,res) => {
     const userPosts = await BlogPost.findAll({
         where: {user_id: userId}
     });
-    res.json(userPosts);
+    res.render('dashboard', userPosts);
+    //res.json(userPosts);
 });
 
 //post (create)

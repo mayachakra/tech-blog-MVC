@@ -8,7 +8,13 @@ const userData = require('./userData');
 const seedDB = async () => {
     try{
         await sequelize.sync({force: true});
-        await User.bulkCreate(userData);
+        //await User.bulkCreate(userData);
+        const users = await User.bulkCreate(userData,{
+            individualHooks: true,
+            returning: true,
+        });
+        console.log('user seeds successful!', users);
+
         await BlogPost.bulkCreate(blogData);
         await Comment.bulkCreate(commentData);
         console.log('Seed Data Worked!');
