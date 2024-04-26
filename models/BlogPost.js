@@ -20,7 +20,7 @@ BlogPost.init(
             allowNull: false
         },
         created_at:{
-            type: DataTypes.INTEGER,
+            type: DataTypes.DATE,
             allowNull: false,
             defaultValue: DataTypes.NOW
         },
