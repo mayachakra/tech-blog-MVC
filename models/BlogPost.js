@@ -33,7 +33,7 @@ BlogPost.init(
             type: DataTypes.INTEGER,
             allowNull: false,
             references:{
-                model: 'user',
+                model: 'user17',
                 key: 'id'
             }
         }
