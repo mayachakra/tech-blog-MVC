@@ -16,7 +16,7 @@ newPostForm.addEventListener('submit', async(event) => {
     const title = document.getElementById('post-title').value;
     const content = document.getElementById('post-content').value;
     try{
-        const reponse = await fetch('/api/posts', {
+        const reponse = await fetch('/api/dashboard', { //was api/posts
             method:'POST',
             headers:{
                 'Content-Type': 'application/json',
