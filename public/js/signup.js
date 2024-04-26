@@ -1,5 +1,3 @@
-const res = require("express/lib/response");
-
 const signupFormHandler = async (event) => {
     event.preventDefault();
     const username = document.querySelector('#username').value.trim();

@@ -1,8 +1,9 @@
 const router = require('express').Router();
 
-router.get('/login', async (req,res) => {
+// /dashboard
+router.get('/', async (req,res) => {
     //const userLogin = await User.findAll();
-    res.render('login');
+    res.render('dashboard');
 });
 
 module.exports = router;

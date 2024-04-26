@@ -1,14 +1,5 @@
 const router = require('express').Router();
-const { BlogPost, User } = require('../models');
-//dashboard isnt working
-
-/*
-router.get('/dashboard', async (req,res) => {
-    //const userLogin = await User.findAll();
-    res.render('dashboard');
-});
-
-*/
+const { BlogPost, User } = require('../../models');
 
 //all posts (read)
 router.get('/', async (req,res) => {
